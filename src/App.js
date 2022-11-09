@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './page/Home'
+import './App.css'
+import FormPage from './page/FormPage'
+import PostPage from './page/PostPage'
+import DetailPage from './page/Detail'
+import TrashPage from './page/TrashPage'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/' element={<Home />} />
+        <Route path='/form' element={<FormPage />} />
+        <Route path='/post' element={<PostPage />} />
+        <Route path='/detail/:id' element={<DetailPage />} />
+        <Route path='/trash' element={<TrashPage />} />
+      </Routes>
+    </BrowserRouter >
+  )
 }
 
-export default App;
+export default App

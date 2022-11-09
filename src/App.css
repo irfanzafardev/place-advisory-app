@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+.container {
+  max-width: 1400px;
+  padding: 30px 100px 0 100px;
+  background-color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-heading {
+  font-size: 86px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.menu-wrapper .menu-image img {
+  width: 380px;
+  height: 280px;
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu-item {
+  height: 70px;
+  padding: 20px 15px;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-bottom: 26px;
+}
+
+.menu-item:hover {
+  cursor: pointer;
+}
+
+.menu-item .icon img {
+  max-width: 16px;
+  max-height: 16px;
+  margin: 0 10px 0 0;
+}
+
+.menu-item .text {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Form */
+
+.submit-button {
+  width: 100%;
+  background-color: #6822D1;
+  color: #fff;
+}
+
+.submit-button:hover {
+  width: 100%;
+  background-color: #4c03ba;
+  color: #fff;
+}
+
+/* Post list */
+
+.list-item{
+    min-height: 260px!important;
+    padding: 20px 15px;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-bottom: 26px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .list-item a:hover {
+    cursor: pointer;
   }
-  to {
-    transform: rotate(360deg);
+
+  .list-item .text {
+    text-decoration: none;
+    color: #000;
   }
+
+  .list-item .icon img {
+    max-width: 16px;
+    max-height: 16px;
+    margin: 0 0 0 20px;
+  }
+
+  .list-item .delete-button {
+    margin-top: 20px;
+  }
+
+  .list-item .delete-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  /* detail page */
+
+.comment-button:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
