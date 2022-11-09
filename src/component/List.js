@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const List = () => {
   // GET Request
-  const rootAPI = 'http://localhost:5000/posts'
+  const rootAPI = 'https://placeadvisory-dev.herokuapp.com/posts'
   const [places, setPlaces] = useState([]);
   const getPlaces = async () => {
     const { data } = await axios.get(rootAPI)
@@ -13,13 +13,8 @@ const List = () => {
     setPlaces(data)
   }
 
-  // const onClickDeleteButtonHandler = (id) => {
-  //   axios.delete(`http://localhost:3001/posts/${id}`);
-  //   getPlaces();
-  // };
-
-  const onClickDeleteButtonHandler = (id) => {
-    axios.patch(`http://localhost:5000/posts/${id}`, { isDeleted: true });
+  const onClickDeleteButtonHandler = async (id) => {
+    await axios.patch(`https://placeadvisory-dev.herokuapp.com/posts/${id}`, { isDeleted: true });
     getPlaces();
   };
 

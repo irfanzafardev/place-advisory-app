@@ -11,7 +11,7 @@ const DetailPage = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:3001/posts/${id}`).then(res => {
+      axios.get(`https://placeadvisory-dev.herokuapp.com/posts/${id}`).then(res => {
         console.log(res)
         setDetail(res.data)
       })

@@ -6,18 +6,13 @@ const Trash = () => {
   // GET Request
   const [places, setPlaces] = useState([]);
   const getPlaces = async () => {
-    const { data } = await axios.get('http://localhost:5000/posts')
+    const { data } = await axios.get('https://placeadvisory-dev.herokuapp.com/posts')
     console.log(data)
     setPlaces(data)
   }
 
-  // const onClickDeleteButtonHandler = (id) => {
-  //   axios.delete(`http://localhost:3001/posts/${id}`);
-  //   getPlaces();
-  // };
-
-  const onClickDeleteButtonHandler = (id) => {
-    axios.patch(`http://localhost:5000/posts/${id}`, { isDeleted: false });
+  const onClickDeleteButtonHandler = async (id) => {
+    await axios.patch(`https://placeadvisory-dev.herokuapp.com/posts/${id}`, { isDeleted: false });
     getPlaces();
   };
 
