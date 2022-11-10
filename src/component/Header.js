@@ -9,7 +9,7 @@ const Header = () => {
             <div className="d-flex justify-content-between">
               <div className="">Team Task</div>
             </div>
-            By Team 3
+            By Team 3 (Published)
           </div>
         </nav>
         <h1 className="header-heading mt-5">PlaceAdvisory</h1>

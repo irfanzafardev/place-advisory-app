@@ -4,23 +4,28 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 
 const List = () => {
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   // GET Request
   const rootAPI = 'https://placeadvisory-dev.herokuapp.com/posts'
   const [places, setPlaces] = useState([]);
   const getPlaces = async () => {
     const { data } = await axios.get(rootAPI)
-    console.log(data)
     setPlaces(data)
   }
 
+  useEffect(() => {
+    getPlaces()
+  }, [])
+
+  // Patch Request
   const onClickDeleteButtonHandler = async (id) => {
     await axios.patch(`https://placeadvisory-dev.herokuapp.com/posts/${id}`, { isDeleted: true });
     getPlaces();
   };
 
-  useEffect(() => {
-    getPlaces()
-  }, [])
   return (
     <div>
       <div className="header mb-4">
@@ -29,7 +34,7 @@ const List = () => {
             <div className="d-flex justify-content-between">
               <Link to="/"> Home </Link>
             </div>
-            PlaceAdvisory
+            PlaceAdvisory (Published)
           </div>
         </nav>
         <h1 className="header-heading mt-5">All Posts</h1>

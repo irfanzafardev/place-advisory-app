@@ -27,7 +27,7 @@ const Trash = () => {
             <div className="d-flex justify-content-between">
               <Link to="/"> Home </Link>
             </div>
-            PlaceAdvisory
+            PlaceAdvisory (Published)
           </div>
         </nav>
         <h1 className="header-heading mt-5">Removed Post</h1>
