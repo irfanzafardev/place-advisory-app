@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const PostForm = () => {
@@ -19,8 +19,6 @@ const PostForm = () => {
     addPost()
     alert('Item has been updated!')
   }
-
-
   return (
     <div className="form-wrapper mt-3">
       <h4>Add Description Here</h4>
