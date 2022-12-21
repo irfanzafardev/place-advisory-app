@@ -5,10 +5,12 @@ import axios from 'axios';
 
 const List = () => {
   // GET Request
-  const rootAPI = 'https://placeadvisory-dev.herokuapp.com/posts'
+  // const rootAPI = 'https://placeadvisory-dev.herokuapp.com/posts'
+  // const rootAPI = 'https://one-press-blog-server.vercel.app'
   const [places, setPlaces] = useState([]);
+
   const getPlaces = async () => {
-    const { data } = await axios.get(rootAPI)
+    const { data } = await axios.get("https://one-press-blog-server.vercel.app/categories")
     setPlaces(data)
   }
 
@@ -44,7 +46,12 @@ const List = () => {
       <div className="list-wrapper mt-3">
         <input className='search' type="text" placeholder='search' onChange={(event) => setQuery(event.target.value)} />
         <div className="row mt-3">
-          {places?.filter(item => item.siteName.toLowerCase().includes(query) || item.siteLocation.toLowerCase().includes(query) || item.name.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)).map((item) => {
+          {places.map((item) => {
+            return (
+              <p>{item.data}</p>
+            )
+          })}
+          {/* {places?.filter(item => item.siteName.toLowerCase().includes(query) || item.siteLocation.toLowerCase().includes(query) || item.name.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)).map((item) => {
             return (
               <div className={`col-4 ${item.isDeleted ? "d-none" : ""} list-item-wrapper`} key={item.id}>
                 <div className="list-item">
@@ -71,7 +78,7 @@ const List = () => {
                 </div>
               </div>
             )
-          })}
+          })} */}
         </div>
       </div>
     </div>
